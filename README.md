@@ -1,8 +1,5 @@
 <h1 align="center">Dashboard</h1>
 
-## Table of Contents
-- [Introduction](#introduction)
-
 ## Introduction
 Welcome to the Dashboard project! This project is created for the 2021 Sec 4 Computing+ Coursework. The main intention of the Coursework was to design a Python-executable script that fulfils the group's Design Goal for a solution to impact the community positively.
 
