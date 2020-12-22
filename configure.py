@@ -12,6 +12,7 @@ print("The main aim of the Dashboard is to help you in using the computer.")
 sleep(1.5)
 print("Here, basic but common commands are available to run.")
 print("Just use your arrow keys (↑ or ↓) and the enter key to select an option.")
+print("In some prompts, you're allowed to type a response, too.")
 sleep(2.5)
 
 print("\n=== Setting Up ===")
@@ -75,4 +76,5 @@ with open("config.ini", "w") as config_file:
 print()
 sleep(1.5)
 
-print("That's all for setting up. Thank you for your time! If you wish to configure again, you may do so later on.")
+print("That's all for setting up. Thank you for your time! If you wish to configure again, you may do so later on.",
+      end="\n\n")
