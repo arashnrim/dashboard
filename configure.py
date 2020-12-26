@@ -1,7 +1,7 @@
 from configparser import ConfigParser
 from time import sleep
 
-from PyInquirer import prompt
+from styles import Style
 
 config = ConfigParser()
 config.read("config.ini")
@@ -21,55 +21,28 @@ sleep(1.5)
 while True:
     name = input("What's your name? ")
     if not name:
-        result = prompt({
-            "type": "confirm",
-            "name": "no_name",
-            "message": "You have not entered a name, continue anyway?",
-            "default": False
-        })
-        if result["no_name"]:
+        result = input(
+            "{blue}!{end} {bold}You have not entered a name, continue anyway?{end} Type y to confirm, n to reject: ".format(
+                blue=Style.BLUE, bold=Style.BOLD, end=Style.END))
+        if result == "y" or result == "Y":
             config.set("DEFAULT", "name", name)
             break
-    else:
-        result = prompt({
-            "type": "confirm",
-            "name": "name_confirmation",
-            "message": "Your name is {}, correct?".format(name),
-            "default": False
-        })
-        if result["name_confirmation"]:
-            config.set("DEFAULT", "name", name)
-            break
+        elif result == "n" or result == "N":
+            print()
         else:
+            print("The input was not valid; we'll try this again.", end="\n\n")
+    else:
+        result = input("{blue}?{end} {bold}Your name is {name}, correct?{end} Type y to confirm, n to reject: ".format(
+            blue=Style.BLUE, end=Style.END, bold=Style.BOLD, name=name))
+        if result == "y" or result == "Y":
+            config.set("DEFAULT", "name", name)
+            break
+        elif result == "n" or result == "N":
             print("\nNot to worry; we'll do it again!")
+        else:
+            print("The input was not valid; we'll try this again.", end="\n\n")
 
 sleep(1.5)
-print()
-activities = [
-    "Getting the latest news",
-    "Getting weather information",
-    "Getting details on your location",
-    "Performing basic calculations",
-    "Getting information about radio stations",
-]
-while True:
-    activity_result = prompt({
-        "type": "list",
-        "name": "activity",
-        "message": "Great! Now, what is the most often thing you think you will do?",
-        "choices": activities
-    })
-    confirmation_result = prompt({
-        "type": "confirm",
-        "name": "activity_confirmation",
-        "message": "Your most common activity is {}, correct?".format(activity_result["activity"].lower()),
-        "default": False
-    })
-    if activity_result["activity"]:
-        config.set("DEFAULT", "commonActivity", str(activities.index(activity_result["activity"])))
-        break
-    else:
-        print("\nNot to worry; we'll do it again!")
 
 with open("config.ini", "w") as config_file:
     config.write(config_file)
