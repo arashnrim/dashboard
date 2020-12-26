@@ -1,7 +1,4 @@
-import configparser
 import json
-import os
-import sys
 from urllib import request, error
 
 from styles import Style
