@@ -6,26 +6,29 @@ from styles import Style
 config = ConfigParser()
 config.read("config.ini")
 
-print("Welcome to the Dashboard!\n")
+print("Welcome to the Dashboard!")
 sleep(2)
-print("The main aim of the Dashboard is to help you in using the computer.")
+print("\nThe main aim of the Dashboard is to help you in using the computer.")
 sleep(1.5)
 print("Here, basic but common commands are available to run.")
 print("Just use your arrow keys (↑ or ↓) and the enter key to select an option.")
-print("In some prompts, you're allowed to type a response, too.")
+print("In some prompts (indicated with {blue}?{end} or {blue}!{end}), you're allowed to type a response, too.".format(
+    blue=Style.BLUE,
+    end=Style.END))
 sleep(2.5)
 
 print("\n=== Setting Up ===")
 print("Let's get started by getting to know you.")
 sleep(1.5)
 while True:
-    name = input("What's your name? ")
+    name = input("{blue}?{end} {bold}What's your name?{end} ".format(blue=Style.BLUE, bold=Style.BOLD, end=Style.END))
     if not name:
         result = input(
             "{blue}!{end} {bold}You have not entered a name, continue anyway?{end} Type y to confirm, n to reject: ".format(
                 blue=Style.BLUE, bold=Style.BOLD, end=Style.END))
         if result == "y" or result == "Y":
             config.set("DEFAULT", "name", name)
+            print()
             break
         elif result == "n" or result == "N":
             print()
