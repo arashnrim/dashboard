@@ -1,1 +1,0 @@
-PyInquirer # CLI-like UI
