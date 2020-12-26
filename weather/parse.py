@@ -1,6 +1,6 @@
 import weather.weatherart
 from . import weatherart
-from .styling import Style
+from styles import Style
 
 
 def parse(data):
