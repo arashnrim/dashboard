@@ -7,8 +7,8 @@ from .request import retrieve_data
 while True:
     location = input(
         "\n{blue}?{end} {bold}Where would you like to know the weather about?{end} ".format(blue=Style.BLUE,
-                                                                                          end=Style.END,
-                                                                                          bold=Style.BOLD))
+                                                                                            end=Style.END,
+                                                                                            bold=Style.BOLD))
     data = retrieve_data(location)
 
     if data is not None:
