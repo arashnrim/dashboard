@@ -46,7 +46,8 @@ while True:
         break
 
 if request == "1":
-    pass  # TODO: Implement news feature
+    # noinspection PyUnresolvedReferences
+    import news
 elif request == "2":
     # noinspection PyUnresolvedReferences
     import weather
