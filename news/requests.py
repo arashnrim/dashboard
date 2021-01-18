@@ -1,5 +1,5 @@
 import feedparser
-from sources import sources
+from .sources import sources
 
 news = []
 
