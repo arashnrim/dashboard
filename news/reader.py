@@ -9,6 +9,7 @@ count = 0
 
 
 def show_paginated(entries):
+    print()
     for index in range(count, count + 5):
         entry = entries[index]
         print("{blue}{number}{end} {bold}{title}{end}".format(blue=Style.BLUE, number=index + 1, end=Style.END,
