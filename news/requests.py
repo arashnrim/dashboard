@@ -1,9 +1,13 @@
 import feedparser
+import os
 from .sources import sources
+from .styles import Style
 
 news = []
 
-print("\nOne second, fetching news to read!\n")
+os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+print("{}News{}".format(Style.BOLD, Style.END))
+print("One second, getting the latest news...")
 
 for source in sources:
     for link in sources[source]:
