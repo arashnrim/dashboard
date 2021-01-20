@@ -17,6 +17,7 @@ for source in sources:
             news.append(entry)
 
 
+# noinspection PyShadowingNames
 def return_date(entry):
     return entry.published_parsed
 
