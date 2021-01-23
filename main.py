@@ -29,10 +29,7 @@ else:
 
 activities = [
     "Get the latest news",
-    "Get weather information",
-    "Get details on your location",
-    "Perform basic calculations",
-    "Get information about radio stations",
+    "Get weather information"
 ]
 
 showPrompt = True
@@ -48,7 +45,7 @@ while True:
     request = input(
         "Enter a number from 1 to {activityCount} or enter q to quit: ".format(activityCount=len(activities)))
 
-    if request not in "12345q" or request == "":
+    if request not in "12q" or request == "":
         print("The input was not valid; we'll try this again.")
         sleep(1.5)
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
@@ -61,16 +58,6 @@ while True:
     elif request == "2":
         # noinspection PyUnresolvedReferences
         import weather
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-    elif request == "3":
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-        continue  # TODO: Implement location feature
-    elif request == "4":
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-        continue  # TODO: Implement calculations feature
-    elif request == "5":
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-        continue  # TODO: Implement radio feature
     elif request == "q":
         break
     continue
