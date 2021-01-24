@@ -1,4 +1,4 @@
-from .styling import Style
+from styles import Style
 
 
 def clear_sky():

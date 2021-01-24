@@ -1,10 +1,7 @@
-import configparser
 import json
-import os
-import sys
 from urllib import request, error
 
-from .styling import Style
+from styles import Style
 
 
 class NoConfigError(Exception):
