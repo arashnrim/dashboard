@@ -1,8 +1,9 @@
 import os
 from configparser import ConfigParser
 from datetime import datetime
+from time import sleep
 
-from PyInquirer import prompt
+from styles import Style
 
 if not (os.path.exists("{}/config.ini".format(os.path.dirname(os.path.abspath(__file__))))):
     # noinspection PyUnresolvedReferences
@@ -22,35 +23,41 @@ elif time >= 18:
     phrase = "evening"
 
 if name:
-    print("Good {}, {}!".format(phrase, name))
+    print("\nGood {}, {}!".format(phrase, name))
 else:
-    print("Good {}!".format(phrase))
+    print("\nGood {}!".format(phrase))
 
 activities = [
     "Get the latest news",
-    "Get weather information",
-    "Get details on your location",
-    "Perform basic calculations",
-    "Get information about radio stations",
+    "Get weather information"
 ]
 
-navigator = {
-    "type": "list",
-    "name": "activity",
-    "message": "What would you like to do?",
-    "choices": activities,
-    "default": int(config.get("DEFAULT", "commonactivity"))
-}
-request = activities.index(prompt(navigator)["activity"])
+showPrompt = True
+while True:
+    if showPrompt:
+        print("{blue}?{end} {bold}What would you like to do?{end}".format(blue=Style.BLUE, end=Style.END,
+                                                                          bold=Style.BOLD))
+        for index, activity in enumerate(activities):
+            print("{bold}{index}{end} {activity}".format(bold=Style.BLUE, index=index + 1, end=Style.END,
+                                                         activity=activity))
+        print()
 
-if request == 0:
-    pass  # TODO: Implement news feature
-elif request == 1:
-    # noinspection PyUnresolvedReferences
-    import weather
-elif request == 2:
-    pass  # TODO: Implement location feature
-elif request == 3:
-    pass  # TODO: Implement calculations feature
-elif request == 4:
-    pass  # TODO: Implement radio feature
+    request = input(
+        "Enter a number from 1 to {activityCount} or enter q to quit: ".format(activityCount=len(activities)))
+
+    if request not in "12q" or request == "":
+        print("The input was not valid; we'll try this again.")
+        sleep(1.5)
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+        continue
+
+    if request == "1":
+        # noinspection PyUnresolvedReferences
+        import news
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+    elif request == "2":
+        # noinspection PyUnresolvedReferences
+        import weather
+    elif request == "q":
+        break
+    continue
