@@ -55,12 +55,9 @@ while True:
         continue
 
     if request == "1":
-        # noinspection PyUnresolvedReferences
-        import news
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-    elif request == "2":
-        # noinspection PyUnresolvedReferences
-        import weather
+        subprocess.call(["python3", "main.py"], cwd="news")
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
     elif request == "q":
         break
     continue
