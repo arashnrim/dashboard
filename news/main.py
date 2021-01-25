@@ -35,7 +35,7 @@ while True:
             count += 5
         os.system('cls' if os.name == 'nt' else "printf '\033c'")
     elif result == "p" or result == "P":
-        if count > 5:
+        if count >= 5:
             count -= 5
         os.system('cls' if os.name == 'nt' else "printf '\033c'")
     elif result == "s" or result == "S":
