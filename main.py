@@ -1,4 +1,5 @@
 import os
+import subprocess
 from configparser import ConfigParser
 from datetime import datetime
 from time import sleep
@@ -47,7 +48,7 @@ while True:
     request = input(
         "Enter a number from 1 to {activityCount} or enter q to quit: ".format(activityCount=len(activities)))
 
-    if request not in "12q" or request == "":
+    if request not in "1q" or request == "":
         print("The input was not valid; we'll try this again.")
         sleep(1.5)
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
