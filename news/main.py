@@ -1,8 +1,7 @@
 import os
 import webbrowser
 
-# noinspection PyUnresolvedReferences
-from requests import news
+from .requests import news
 
 from styles import Style
 
