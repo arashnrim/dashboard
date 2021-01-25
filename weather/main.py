@@ -1,8 +1,8 @@
 import os
 from time import sleep
 from styles import Style
-from .parse import parse
-from .request import retrieve_data
+from parse import parse
+from request import retrieve_data
 
 os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
 print("{}Weather{}".format(Style.BOLD, Style.END))
