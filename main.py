@@ -26,9 +26,9 @@ elif time >= 18:
 os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
 
 if name:
-    print("Good {}, {}!".format(phrase, name))
+    print("\nGood {}, {}!".format(phrase, name))
 else:
-    print("Good {}!".format(phrase))
+    print("\nGood {}!".format(phrase))
 
 activities = [
     "Get the latest news",
@@ -47,6 +47,7 @@ while True:
 
     request = input(
         "Enter a number from 1 to {activityCount} or enter q to quit: ".format(activityCount=len(activities)))
+
 
     if request not in "2q" or request == "":
         print("The input was not valid; we'll try this again.")
