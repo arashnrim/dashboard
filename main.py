@@ -1,10 +1,15 @@
 import os
 import subprocess
+import sys
 from configparser import ConfigParser
 from datetime import datetime
 from time import sleep
 
 from styles import Style
+
+if "idlelib" in sys.modules:
+    print("\nPlease run this program from the Terminal instead of IDLE.\n")
+    sys.exit()
 
 if not (os.path.exists("{}/config.ini".format(os.path.dirname(os.path.abspath(__file__))))):
     # noinspection PyUnresolvedReferences
