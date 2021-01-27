@@ -49,13 +49,17 @@ while True:
         "Enter a number from 1 to {} or enter q to quit: ".format(len(activities)))
 
 
-    if request not in "2q" or request == "":
+    if request not in "12q" or request == "":
         print("The input was not valid; we'll try this again.")
         sleep(1.5)
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
         continue
 
-    if request == "2":
+    if request == "1":
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+        subprocess.call(["python3", "main.py"], cwd="news")
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+    elif request == "2":
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
         subprocess.call(["python3", "main.py"], cwd="weather")
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
