@@ -1,7 +1,7 @@
 import feedparser
 import os
-from .sources import sources
-from .styles import Style
+from sources import sources
+from styles import Style
 
 news = []
 
