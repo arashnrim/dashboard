@@ -26,9 +26,9 @@ elif time >= 18:
 os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
 
 if name:
-    print("Good {}, {}!".format(phrase, name))
+    print("\nGood {}, {}!".format(phrase, name))
 else:
-    print("Good {}!".format(phrase))
+    print("\nGood {}!".format(phrase))
 
 activities = [
     "Get the latest news",
@@ -46,7 +46,8 @@ while True:
         print()
 
     request = input(
-        "Enter a number from 1 to {activityCount} or enter q to quit: ".format(activityCount=len(activities)))
+        "Enter a number from 1 to {} or enter q to quit: ".format(len(activities)))
+
 
     if request not in "1q" or request == "":
         print("The input was not valid; we'll try this again.")
@@ -58,6 +59,9 @@ while True:
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
         subprocess.call(["python3", "main.py"], cwd="news")
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+    elif request == "2":
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+        subprocess.call(["python3", "main.py"], cwd="weather")
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
     elif request == "q":
         break
-    continue
