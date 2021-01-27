@@ -31,10 +31,12 @@ while True:
         if count <= int(result) <= count + 5:
             webbrowser.open(news[int(result) - 1].id)
     elif result == "n" or result == "N":
-        count += 5
+        if count < len(news) - 5:
+            count += 5
         os.system('cls' if os.name == 'nt' else "printf '\033c'")
     elif result == "p" or result == "P":
-        count -= 5
+        if count >= 5:
+            count -= 5
         os.system('cls' if os.name == 'nt' else "printf '\033c'")
     elif result == "s" or result == "S":
         break
