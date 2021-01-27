@@ -46,7 +46,7 @@ while True:
         print()
 
     request = input(
-        "Enter a number from 1 to {activityCount} or enter q to quit: ".format(activityCount=len(activities)))
+        "Enter a number from 1 to {} or enter q to quit: ".format(len(activities)))
 
 
     if request not in "2q" or request == "":

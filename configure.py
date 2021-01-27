@@ -7,7 +7,7 @@ config = ConfigParser()
 config.read("config.ini")
 
 print("Welcome to the Dashboard!")
-sleep(2)
+sleep(1)
 print("\nThe main aim of the Dashboard is to help you in using the computer.")
 sleep(1.5)
 print("Here, basic but common commands are available to run.")
