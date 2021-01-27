@@ -26,9 +26,9 @@ elif time >= 18:
 os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
 
 if name:
-    print("\nGood {}, {}!".format(phrase, name))
+    print("Good {}, {}!".format(phrase, name))
 else:
-    print("\nGood {}!".format(phrase))
+    print("Good {}!".format(phrase))
 
 activities = [
     "Get the latest news",
