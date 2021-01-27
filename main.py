@@ -53,7 +53,6 @@ while True:
     request = input(
         "Enter a number from 1 to {} or enter q to quit: ".format(len(activities)))
 
-
     if request not in "12q" or request == "":
         print("The input was not valid; we'll try this again.")
         sleep(1.5)
