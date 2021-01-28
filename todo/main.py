@@ -4,8 +4,8 @@ from styles import Style
 from task import addTask, parseTasks
 
 
-def showDetails(request):
-    print("".format(request))
+def showDetails(task):
+    print(task)
 
 
 os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
@@ -17,20 +17,22 @@ while True:
 
     if tasks == 0 or not (os.path.exists("{}/data.csv".format(os.path.dirname(os.path.abspath(__file__))))):
         print("{yellow}!{end} There are no tasks.".format(yellow=Style.YELLOW, end=Style.END))
+        request_message = "\n{blue}!{end} {bold}Navigate your to-dos.{end} Type a to add a task, q to exit: ".format(
+            blue=Style.BLUE, end=Style.END, bold=Style.BOLD)
+    else:
+        request_message = "\n{blue}!{end} {bold}Navigate your to-dos.{end} Type the task number to view a task, " \
+                          "a to add a task, q to exit: ".format(blue=Style.BLUE, end=Style.END, bold=Style.BOLD)
 
-    request = input(
-        "\n{blue}!{end} {bold}Navigate your to-dos.{end} Type the task number to view a task, a to add a task, "
-        "q to exit: ".format(
-            blue=Style.BLUE,
-            end=Style.END,
-            bold=Style.BOLD))
+    request = input(request_message)
 
-    if request in str(range(1, tasks + 1)):
+    try:
         request = int(request)
+    except ValueError:
+        if request == "a":
+            os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+            addTask()
+            os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+        if request == "q":
+            break
+    else:
         showDetails(request)
-    elif request == "a":
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-        addTask()
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-    if request == "q":
-        break
