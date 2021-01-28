@@ -9,6 +9,11 @@ count = 0
 
 
 def show_paginated(entries):
+    """
+    Shows the news entries in a paginated order of five entries per page.
+
+    :param entries: A list that stores all the news articles to display.
+    """
     print()
     for index in range(count, count + 5):
         entry = entries[index]
@@ -27,6 +32,8 @@ while True:
             blue=Style.BLUE,
             end=Style.END,
             bold=Style.BOLD))
+    # If the user has entered a digit, the program presume that they'd like to read the article. Using the webbrowser
+    # module, the user's default web browser is launched with the news article link directly.
     if result.isdigit():
         if count <= int(result) <= count + 5:
             webbrowser.open(news[int(result) - 1].id)
