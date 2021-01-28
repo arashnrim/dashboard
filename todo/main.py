@@ -3,7 +3,8 @@ import os
 from dateutil.parser import parse
 
 from styles import Style
-from task import addTask, parseTasks
+from task import addTask, parseTasks, deleteTask
+
 
 def showDetails(task, request):
     while True:
@@ -12,6 +13,7 @@ def showDetails(task, request):
         result = input("\nType x to complete (delete), b to go back: ")
 
         if result == "x":
+            deleteTask(request)
             break
         elif result == "b":
             break
