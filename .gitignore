@@ -271,3 +271,4 @@ dmypy.json
 .prof
 /.idea
 /config.ini
+/todo/data.csv
