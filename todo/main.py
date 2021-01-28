@@ -1,11 +1,20 @@
 import os
 
+from dateutil.parser import parse
+
 from styles import Style
 from task import addTask, parseTasks
 
+def showDetails(task, request):
+    while True:
+        print("{bold}{name}{end}".format(bold=Style.BOLD, name=task["name"], end=Style.END))
+        print("Due on {}".format(parse(task["due"]).strftime("%-d %b %Y")))
+        result = input("\nType x to complete (delete), b to go back: ")
 
-def showDetails(task):
-    print(task)
+        if result == "x":
+            break
+        elif result == "b":
+            break
 
 
 os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
