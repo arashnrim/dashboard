@@ -35,7 +35,11 @@ if name:
 else:
     print("Good {}!".format(phrase))
 
-activities = ["Get the latest news", "Get weather information"]
+activities = [
+    "Get the latest news",
+    "Get weather information",
+    "Manage your tasks",
+]
 
 showPrompt = True
 while True:
@@ -50,9 +54,9 @@ while True:
     request = input(
         "Enter a number from 1 to {} or enter q to quit: ".format(len(activities)))
 
-    if request not in "12q" or request == "":
+    if request not in "123q" or request == "":
         print("The input was not valid; we'll try this again.")
-        sleep(1.5)
+        sleep(1)
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
         continue
 
@@ -63,6 +67,10 @@ while True:
     elif request == "2":
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
         subprocess.call(["python3", "main.py"], cwd="weather")
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+    elif request == "3":
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+        subprocess.call(["python3", "main.py"], cwd="todo")
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
     elif request == "q":
         break
