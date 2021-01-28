@@ -89,4 +89,18 @@ def parseTasks():
                                                                                                   due_date="- " + due_date
                                                                                                   ))
 
-    return len(tasks)
+    return tasks
+
+
+def deleteTask(request):
+    request += 1
+    with open("data.csv", "r") as source_file, open("data_temp.csv", "w") as copy_file:
+        writer = csv.writer(copy_file)
+        reader = csv.reader(source_file, delimiter=",")
+        rows = [row for row in reader]
+        rows.pop(request)
+        writer.writerows(rows)
+
+    os.rename("data.csv", "data_old.csv")
+    os.rename("data_temp.csv", "data.csv")
+    os.remove("data_old.csv")
