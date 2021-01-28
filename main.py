@@ -35,10 +35,7 @@ if name:
 else:
     print("Good {}!".format(phrase))
 
-activities = [
-    "Get the latest news",
-    "Get weather information"
-]
+activities = ["Get the latest news", "Get weather information"]
 
 showPrompt = True
 while True:
