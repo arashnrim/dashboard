@@ -15,13 +15,18 @@ while True:
     if os.path.exists("{}/data.csv".format(os.path.dirname(os.path.abspath(__file__)))):
         tasks = parseTasks()
 
-    if tasks == 0 or not (os.path.exists("{}/data.csv".format(os.path.dirname(os.path.abspath(__file__))))):
+    if not (os.path.exists("{}/data.csv".format(os.path.dirname(os.path.abspath(__file__))))):
         print("{yellow}!{end} There are no tasks.".format(yellow=Style.YELLOW, end=Style.END))
         request_message = "\n{blue}!{end} {bold}Navigate your to-dos.{end} Type a to add a task, q to exit: ".format(
             blue=Style.BLUE, end=Style.END, bold=Style.BOLD)
     else:
-        request_message = "\n{blue}!{end} {bold}Navigate your to-dos.{end} Type the task number to view a task, " \
-                          "a to add a task, q to exit: ".format(blue=Style.BLUE, end=Style.END, bold=Style.BOLD)
+        if len(tasks) == 0:
+            print("{yellow}!{end} There are no tasks.".format(yellow=Style.YELLOW, end=Style.END))
+            request_message = "\n{blue}!{end} {bold}Navigate your to-dos.{end} Type a to add a task, q to exit: ".format(
+                blue=Style.BLUE, end=Style.END, bold=Style.BOLD)
+        else:
+            request_message = "\n{blue}!{end} {bold}Navigate your to-dos.{end} Type the task number to view a task, " \
+                              "a to add a task, q to exit: ".format(blue=Style.BLUE, end=Style.END, bold=Style.BOLD)
 
     request = input(request_message)
 
@@ -35,4 +40,6 @@ while True:
         if request == "q":
             break
     else:
-        showDetails(request)
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+        showDetails(tasks[request - 1], request - 1)
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
