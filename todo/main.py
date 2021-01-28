@@ -10,7 +10,7 @@ def showDetails(task, request):
     while True:
         print("{bold}{name}{end}".format(bold=Style.BOLD, name=task["name"], end=Style.END))
         print("Due on {}".format(parse(task["due"]).strftime("%-d %b %Y")))
-        result = input("\nType x to complete (delete), b to go back: ")
+        result = input("\nType x to complete/delete, b to go back: ")
 
         if result == "x":
             deleteTask(request)
