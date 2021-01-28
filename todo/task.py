@@ -9,6 +9,13 @@ from styles import Style
 
 
 def addTask():
+    """
+    Creates and stores a new task.
+
+    This function will prompt the user for a task name, due date, and importance. Appropriate validation checks are run
+    to ensure that these values are as they should be. Once validated, the task is compiled and stored in the data.csv
+    file for use later on.
+    """
     while True:
         print("{bold}Add Task{end}\n".format(bold=Style.BOLD, end=Style.END))
 
@@ -59,6 +66,11 @@ def addTask():
 
 
 def readTasks():
+    """
+    Reads the tasks stored in the data.csv file.
+
+    :return: A list with the user's tasks.
+    """
     tasks = []
     with open("data.csv") as file:
         reader = csv.DictReader(file)
@@ -68,6 +80,12 @@ def readTasks():
 
 
 def parseTasks():
+    """
+    Displays the tasks in a user-friendly way, allowing for user interaction with the task (by associating it with an
+    inputtable number).
+
+    :return: A list with the user's tasks
+    """
     tasks = readTasks()
     for index, task in enumerate(tasks):
         due = datetime.datetime.now() > parse(task["due"])
@@ -93,6 +111,11 @@ def parseTasks():
 
 
 def deleteTask(request):
+    """
+    Removes a user's task.
+    :param request: The index of task to be deleted.
+    :return:
+    """
     request += 1
     with open("data.csv", "r") as source_file, open("data_temp.csv", "w") as copy_file:
         writer = csv.writer(copy_file)
