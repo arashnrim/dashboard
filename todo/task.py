@@ -1,4 +1,5 @@
 import csv
+import datetime
 import os
 from time import sleep
 
@@ -69,12 +70,23 @@ def readTasks():
 def parseTasks():
     tasks = readTasks()
     for index, task in enumerate(tasks):
+        due = datetime.datetime.now() > parse(task["due"])
+        due_date = parse(task["due"]).strftime("%-d %b %Y")
         print(
-            "{blue}{count}{end} [{importance}]{spaces}{bold}{name}{end} ".format(blue=Style.BLUE, count=index + 1,
-                                                                                 end=Style.END,
-                                                                                 bold=Style.BOLD, name=task["name"],
-                                                                                 importance="!" * int(
-                                                                                     task["importance"]), spaces=" " * (
-                        1 + (3 - int(task["importance"])))
-                                                                                 ))
+            "{blue}{count}{end} [{importance}]{spaces}{color}{bold}{name}{end} {due_date}".format(blue=Style.BLUE,
+                                                                                                  count=index + 1,
+                                                                                                  end=Style.END,
+                                                                                                  color=Style.RED if due else "",
+                                                                                                  bold=Style.BOLD,
+                                                                                                  name=task["name"],
+                                                                                                  importance="!" * int(
+                                                                                                      task[
+                                                                                                          "importance"]),
+                                                                                                  spaces=" " * (
+                                                                                                          1 + (3 - int(
+                                                                                                      task[
+                                                                                                          "importance"]))),
+                                                                                                  due_date="- " + due_date
+                                                                                                  ))
+
     return len(tasks)
