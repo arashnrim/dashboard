@@ -24,7 +24,7 @@ def addTask():
                                                             end=Style.END,
                                                             bold=Style.BOLD))
         due = input(
-            "{blue}!{end} {bold}Due date of task{end}: ".format(blue=Style.BLUE,
+            "{blue}!{end} {bold}Due date of task{end} {bold}(DD/MM/YYYY){end}: ".format(blue=Style.BLUE,
                                                                 end=Style.END,
                                                                 bold=Style.BOLD))
         try:
@@ -47,7 +47,7 @@ def addTask():
             os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
             continue
         else:
-            if not (1 <= importance <= 3):
+            if not (1 <= importance <= 3) or importance == float:
                 print("the importance of the task should be between 1 and 3; we'll try this again.")
                 sleep(1)
                 os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
