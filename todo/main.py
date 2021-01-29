@@ -24,11 +24,10 @@ def showDetails(task, request):
         elif result == "b":
             break
 
-
-os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-print("{}To-do{}".format(Style.BOLD, Style.END))
-
 while True:
+    os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+    print("{}To-do{}".format(Style.BOLD, Style.END))
+
     # Checks if the user has any to-dos existing pre-existingly. If so, the tasks are parsed and loaded on screen.
     if os.path.exists("{}/data.csv".format(os.path.dirname(os.path.abspath(__file__)))):
         tasks = parseTasks()
