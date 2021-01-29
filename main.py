@@ -74,7 +74,7 @@ while True:
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
     elif request == "4":
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-        subprocess.call(["python3", "main.py"], cwd="todo")
+        subprocess.call(["python3", "main.py"], cwd="radio")
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
     elif request == "q":
         break
