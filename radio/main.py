@@ -11,9 +11,9 @@ listOfNames = ['Class 95', 'Gold 905', '987', 'CNA 938', 'Symphony 92.4', 'Yes 9
 
 chromedriver = '/usr/local/bin/chromedriver'
 
-# if not Path(chromedriver).is_file():
-#     print("The Chrome driver is required for this feature. Please install it at /usr/local/bin/ and try again.")
-#     sys.exit()
+if not Path(chromedriver).is_file():
+    print("The Chrome driver is required for this feature. Please install it at /usr/local/bin/ and try again.")
+    sys.exit()
 
 while True:
     print("{blue}!{end} {bold}Warning:{end} This feature will open up several instances of Chrome. This is normal.".format(blue=Style.BLUE, end=Style.END, bold=Style.BOLD))
