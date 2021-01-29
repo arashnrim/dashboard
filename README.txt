@@ -8,7 +8,8 @@ This program requires the following to be installed:
 === Running the Program ===
 Due to some limitations on IDLE, the program cannot be run on it. Instead, use the Terminal:
 
-0. At the location of the Python installation (usually at /Applications/Python <version>/), open and execute the "Install Certificates.command" file.
+0a. At the location of the Python installation (usually at /Applications/Python <version>/), open and execute the "Install Certificates.command" file.
+0b. To use the feature on the radio, install the Chrome drivers at /usr/local/bin/.
 1. Navigate to the project directory: cd /path/to/dashboard (where /path/to/dashboard is replaced with the path to the folder)/
 2. Install required modules: pip3 install -r requirements.txt
 
