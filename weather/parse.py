@@ -3,6 +3,11 @@ import weatherart
 
 
 def parse(data):
+    """
+    Receives the data payload and parses it in a human-readable manner.
+
+    :param data: The data payload of the weather information from OpenWeatherMap.
+    """
     temp = round(data["main"]["temp"] / 10, 2)
     condition = data["weather"][0]["description"].capitalize()
     feels_like = round(data["main"]["feels_like"] / 10, 2)

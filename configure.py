@@ -11,7 +11,6 @@ sleep(1)
 print("\nThe main aim of the Dashboard is to help you in using the computer.")
 sleep(1.5)
 print("Here, basic but common commands are available to run.")
-print("Just use your arrow keys (↑ or ↓) and the enter key to select an option.")
 print("In some prompts (indicated with {blue}?{end} or {blue}!{end}), you're allowed to type a response, too.".format(
     blue=Style.BLUE,
     end=Style.END))
