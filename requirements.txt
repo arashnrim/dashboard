@@ -1,2 +1,5 @@
 feedparser  # Package for reading RSS feeds
 python-dateutil # Package for extending datetime module
+requests
+selenium
+beautifulsoup4
