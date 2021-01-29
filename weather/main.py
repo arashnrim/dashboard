@@ -8,10 +8,14 @@ os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
 print("{}Weather{}".format(Style.BOLD, Style.END))
 
 while True:
-    location = input(
-        "{blue}?{end} {bold}Where would you like to know the weather about?{end} ".format(blue=Style.BLUE,
-                                                                                          end=Style.END,
+
+    while True:
+        location = input(
+            "{blue}?{end} {bold}Where would you like to know the weather about?{end} ".format(blue=Style.BLUE,
+                                                                                     end=Style.END,
                                                                                           bold=Style.BOLD))
+
+    
     data = retrieve_data(location)
 
     if data is not None:
