@@ -24,11 +24,12 @@ def show_paginated(entries):
 
 while True:
     os.system('cls' if os.name == 'nt' else "printf '\033c'")
+    print("\n{}News{}".format(Style.BOLD, Style.END))
     show_paginated(news)
     print()
     result = input(
         "{blue}?{end} {bold}Type the article's number to open it.{end} Type n for the next page, p for the previous, "
-        "s to stop: ".format(
+        "q to quit: ".format(
             blue=Style.BLUE,
             end=Style.END,
             bold=Style.BOLD))
@@ -37,13 +38,13 @@ while True:
     if result.isdigit():
         if count <= int(result) <= count + 5:
             webbrowser.open(news[int(result) - 1].id)
-    elif result == "n" or result == "N":
+    elif result == "n":
         if count < len(news) - 5:
             count += 5
         os.system('cls' if os.name == 'nt' else "printf '\033c'")
-    elif result == "p" or result == "P":
+    elif result == "p":
         if count >= 5:
             count -= 5
         os.system('cls' if os.name == 'nt' else "printf '\033c'")
-    elif result == "s" or result == "S":
+    elif result == "q":
         break
