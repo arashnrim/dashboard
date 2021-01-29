@@ -7,6 +7,12 @@ from task import addTask, parseTasks, deleteTask
 
 
 def showDetails(task, request):
+    """
+    Shows additional details and actions a user can take for a specific task.
+
+    :param task: The task, in the form of a dictionary.
+    :param request: The index of the task in the main tasks list.
+    """
     while True:
         print("{bold}{name}{end}".format(bold=Style.BOLD, name=task["name"], end=Style.END))
         print("Due on {}".format(parse(task["due"]).strftime("%-d %b %Y")))
@@ -17,14 +23,17 @@ def showDetails(task, request):
             break
         elif result == "b":
             break
-
-
-os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-print("{}To-do{}".format(Style.BOLD, Style.END))
-
+            
 while True:
+    os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+    print("{}To-do{}".format(Style.BOLD, Style.END))
+
+    # Checks if the user has any to-dos existing pre-existingly. If so, the tasks are parsed and loaded on screen.
     if os.path.exists("{}/data.csv".format(os.path.dirname(os.path.abspath(__file__)))):
         tasks = parseTasks()
+
+    # If there are to-do lists, the program checks if the data.csv file exists — if not, it's likely that the user has
+    # not used this feature before. The end output is customised to these changes.
 
     if not (os.path.exists("{}/data.csv".format(os.path.dirname(os.path.abspath(__file__))))):
         print("{yellow}!{end} There are no tasks.".format(yellow=Style.YELLOW, end=Style.END))
