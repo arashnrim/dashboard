@@ -31,13 +31,6 @@ elif 12 <= time < 17:
 elif time >= 18:
     phrase = "evening"
 
-os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-
-if name:
-    print("Good {}, {}!".format(phrase, name))
-else:
-    print("Good {}!".format(phrase))
-
 activities = [
     "Get the latest news",
     "Get weather information",
@@ -46,6 +39,13 @@ activities = [
 
 showPrompt = True
 while True:
+    os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+
+    if name:
+        print("Good {}, {}!".format(phrase, name))
+    else:
+        print("Good {}!".format(phrase))
+
     if showPrompt:
         print("{blue}?{end} {bold}What would you like to do?{end}".format(blue=Style.BLUE, end=Style.END,
                                                                           bold=Style.BOLD))
@@ -56,12 +56,6 @@ while True:
 
     request = input(
         "Enter a number from 1 to {} or enter q to quit: ".format(len(activities)))
-
-    if request not in "123q" or request == "":
-        print("The input was not valid; we'll try this again.")
-        sleep(1)
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-        continue
 
     # Receives the user's input which is either a numeric value associated with a feature or q to quit.
     # Once received, the feature is launched using the subprocess module.

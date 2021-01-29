@@ -17,16 +17,16 @@ def addTask():
     file for use later on.
     """
     while True:
-        print("{bold}Add Task{end}\n".format(bold=Style.BOLD, end=Style.END))
+        print("=== {bold}Add a new task{end} ===\n".format(bold=Style.BOLD, end=Style.END))
 
         name = input(
-            "{blue}!{end} {bold}Name of task{end}: ".format(blue=Style.BLUE,
-                                                            end=Style.END,
-                                                            bold=Style.BOLD))
+            "{blue}?{end} {bold}What is the name of task?{end} ".format(blue=Style.BLUE,
+                                                                        end=Style.END,
+                                                                        bold=Style.BOLD))
         due = input(
-            "{blue}!{end} {bold}Due date of task{end}: ".format(blue=Style.BLUE,
-                                                                end=Style.END,
-                                                                bold=Style.BOLD))
+            "{blue}?{end} {bold}When is the task due?{end} ".format(blue=Style.BLUE,
+                                                                    end=Style.END,
+                                                                    bold=Style.BOLD))
         try:
             due_date = parse(due, fuzzy=True)
         except ValueError:
@@ -35,7 +35,7 @@ def addTask():
             os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
             continue
         importance = input(
-            "{blue}!{end} {bold}Importance of task{end} (1 being least important to 3 being most): ".format(
+            "{blue}?{end} {bold}How important is the task?{end} (1 being least important to 3 being most): ".format(
                 blue=Style.BLUE,
                 end=Style.END,
                 bold=Style.BOLD))
@@ -48,7 +48,7 @@ def addTask():
             continue
         else:
             if not (1 <= importance <= 3):
-                print("the importance of the task should be between 1 and 3; we'll try this again.")
+                print("The importance of the task should be between 1 and 3; we'll try this again.")
                 sleep(1)
                 os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
                 continue
