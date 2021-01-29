@@ -23,7 +23,7 @@ def showDetails(task, request):
             break
         elif result == "b":
             break
-
+            
 while True:
     os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
     print("{}To-do{}".format(Style.BOLD, Style.END))
@@ -34,6 +34,7 @@ while True:
 
     # If there are to-do lists, the program checks if the data.csv file exists — if not, it's likely that the user has
     # not used this feature before. The end output is customised to these changes.
+
     if not (os.path.exists("{}/data.csv".format(os.path.dirname(os.path.abspath(__file__))))):
         print("{yellow}!{end} There are no tasks.".format(yellow=Style.YELLOW, end=Style.END))
         request_message = "\n{blue}!{end} {bold}Navigate your to-dos.{end} Type a to add a task, q to exit: ".format(
