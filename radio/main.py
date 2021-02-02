@@ -1,13 +1,17 @@
-import requests
 import sys
-from styles import Style
 from pathlib import Path
+from time import sleep
+
 from bs4 import BeautifulSoup
-from selenium import webdriver
+from selenium import webdriver, common
 
-listOfURLs = ['class-95', 'gold-905', '987', 'cna938', 'symphony-924', 'yes-933', 'love-972', 'capital-958', 'warna-942', 'ria-897', 'oli-968']
+from styles import Style
 
-listOfNames = ['Class 95', 'Gold 905', '987', 'CNA 938', 'Symphony 92.4', 'Yes 933', 'Love 972', 'Capital 958', 'Warna 942', 'Ria 897', 'Oli 968']
+listOfURLs = ['class-95', 'gold-905', '987', 'cna938', 'symphony-924', 'yes-933', 'love-972', 'capital-958',
+              'warna-942', 'ria-897', 'oli-968']
+
+listOfNames = ['Class 95', 'Gold 905', '987', 'CNA 938', 'Symphony 92.4', 'Yes 933', 'Love 972', 'Capital 958',
+               'Warna 942', 'Ria 897', 'Oli 968']
 
 chromedriver = '/usr/local/bin/chromedriver'
 
@@ -36,4 +40,4 @@ for i in range(len(listOfURLs)):
 		print("{}: ".format(listOfNames[i]), end = "")
 		print(x['alt'])
 		driver.close()
-		break
+		break            break
