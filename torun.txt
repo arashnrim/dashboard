@@ -1,4 +1,0 @@
-Things users need to do:
-
-1. Run pip3 install -r requirements.txt
-2. Install Python certificates
