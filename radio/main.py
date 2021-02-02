@@ -20,7 +20,10 @@ if not Path(chromedriver).is_file():
     sys.exit()
 
 while True:
-    print("{blue}!{end} {bold}Warning:{end} This feature will open up several instances of Chrome. This is normal.".format(blue=Style.BLUE, end=Style.END, bold=Style.BOLD))
+    print("{bold}Radio{end}".format(bold=Style.BOLD, end=Style.END))
+    print(
+        "{blue}!{end} {bold}Warning:{end} This feature will open up several instances of Chrome.".format(
+            blue=Style.BLUE, end=Style.END, bold=Style.BOLD))
     result = input("Continue? Type y for yes, n for no: ")
     if result == "y":
         break
