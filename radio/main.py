@@ -31,16 +31,23 @@ while True:
         sys.exit()
 
 for i in range(len(listOfURLs)):
-	driver = webdriver.Chrome(chromedriver)
-	driver.implicitly_wait(90)
-	driver.get('https://www.melisten.sg/radio/{}'.format(listOfURLs[i]))
+    try:
+        driver = webdriver.Chrome(chromedriver)
+    except common.exceptions.WebDriverException:
+        print(
+            "{red}!{end} {bold}A Chrome binary is required for this feature.{end} Please install it and try again.".format(
+                red=Style.RED, end=Style.END, bold=Style.BOLD))
+        sleep(3.5)
+        sys.exit()
+    else:
+        driver.implicitly_wait(90)
+        driver.get('https://www.melisten.sg/radio/{}'.format(listOfURLs[i]))
+        soup = BeautifulSoup(driver.page_source, 'lxml')
 
-	soup = BeautifulSoup(driver.page_source, 'lxml')
+        ans = soup.find_all('img', class_='mr-2 lazy0 lazy-loaded')
 
-	ans = soup.find_all('img', class_='mr-2 lazy0 lazy-loaded')
-
-	for x in ans:
-		print("{}: ".format(listOfNames[i]), end = "")
-		print(x['alt'])
-		driver.close()
-		break            break
+        for x in ans:
+            print("{}: ".format(listOfNames[i]), end="")
+            print(x['alt'])
+            driver.close()
+            break
