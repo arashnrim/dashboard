@@ -13,3 +13,18 @@ For more details on the project, visit the [project report](https://docs.google.
 
 ## Contributing
 For contributors (project members), before making any contributions to the project, be sure to read the [Contributing file](https://github.com/arashnrim/Liste/blob/main/CONTRIBUTING.md) for the standardisation of style.
+
+## Installing
+
+### This program requires the following to be installed:
+- Python (tested only ≥ 3.6.8)
+- Terminal (pre-installed on macOS)
+
+### Running the Program
+Due to some limitations on IDLE, the program cannot be run on it. Instead, use the Terminal:
+
+1.  At the location of the Python installation (usually at `/Applications/Python <version>/`), open and execute the "Install Certificates.command" file.
+2. To use the feature on the radio, install the Chrome drivers at `/usr/local/bin/`.
+3. Navigate to the project directory: `cd /path/to/dashboard` (where `/path/to/dashboard` is replaced with the path to the folder)/
+4. Install required modules: `pip3 install -r requirements.txt`
+
