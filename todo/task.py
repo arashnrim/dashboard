@@ -8,7 +8,7 @@ from dateutil.parser import parse
 from styles import Style
 
 
-def addTask():
+def add_task():
     """
     Creates and stores a new task.
 
@@ -25,8 +25,8 @@ def addTask():
                                                                         bold=Style.BOLD))
         due = input(
             "{blue}!{end} {bold}When is the task due?{end} {bold}(DD/MM/YYYY){end}: ".format(blue=Style.BLUE,
-                                                                end=Style.END,
-                                                                bold=Style.BOLD))
+                                                                                             end=Style.END,
+                                                                                             bold=Style.BOLD))
         try:
             due_date = parse(due, fuzzy=True)
         except ValueError:
@@ -65,7 +65,7 @@ def addTask():
         break
 
 
-def readTasks():
+def read_tasks():
     """
     Reads the tasks stored in the data.csv file.
 
@@ -79,14 +79,14 @@ def readTasks():
     return tasks
 
 
-def parseTasks():
+def parse_tasks():
     """
     Displays the tasks in a user-friendly way, allowing for user interaction with the task (by associating it with an
     inputtable number).
 
     :return: A list with the user's tasks
     """
-    tasks = readTasks()
+    tasks = read_tasks()
     for index, task in enumerate(tasks):
         due = datetime.datetime.now() > parse(task["due"])
         due_date = parse(task["due"]).strftime("%-d %b %Y")
@@ -97,20 +97,15 @@ def parseTasks():
                                                                                                   color=Style.RED if due else "",
                                                                                                   bold=Style.BOLD,
                                                                                                   name=task["name"],
-                                                                                                  importance="!" * int(
-                                                                                                      task[
-                                                                                                          "importance"]),
-                                                                                                  spaces=" " * (
-                                                                                                          1 + (3 - int(
-                                                                                                      task[
-                                                                                                          "importance"]))),
+                                                                                                  importance="!" * int(task["importance"]),
+                                                                                                  spaces=" " * (1 + (3 - int(task["importance"]))),
                                                                                                   due_date="- " + due_date
                                                                                                   ))
 
     return tasks
 
 
-def deleteTask(request):
+def delete_task(request):
     """
     Removes a user's task.
     :param request: The index of task to be deleted.
