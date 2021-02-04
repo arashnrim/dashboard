@@ -3,7 +3,6 @@ import subprocess
 import sys
 from configparser import ConfigParser
 from datetime import datetime
-from time import sleep
 
 from styles import Style
 
