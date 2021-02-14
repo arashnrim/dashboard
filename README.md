@@ -24,3 +24,6 @@ Due to some limitations on IDLE, the program cannot be run on it. Instead, use t
 2. To use the feature on the radio, install the Chrome drivers at `/usr/local/bin/`.
 3. Navigate to the project directory: `cd /path/to/dashboard` (where `/path/to/dashboard` is replaced with the path to the folder)/
 4. Install required modules: `pip3 install -r requirements.txt`
+
+## Contributing
+This project is not accepting feature contributions since it is meant for this specific coursework which has since concluded. If you would like to contribute in other ways except for adding features — such as reporting bugs, cleaning up code, and improving documentation — you may create a fork and a pull request once you're done, if you are interested.
