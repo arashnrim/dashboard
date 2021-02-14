@@ -1,9 +1,11 @@
 # Dashboard
 
 ## Introduction
+
 Welcome to the Dashboard project! This project was created for the 2021 Sec 4 Computing+ Coursework. The main intention of the Coursework was to design a Python-executable script that works as a solution for the set design goal.
 
 ### About the project
+
 The design goal of this project is:
 > Enabling easier use of a computer through an accessible, intuitive interface.
 
@@ -14,10 +16,12 @@ For more details on the project, visit the [project report](https://docs.google.
 ## Installing
 
 ### This program requires the following to be installed:
+
 - Python (tested only on versions ≥ 3.6.8)
 - Terminal (pre-installed on macOS)
 
 ### Running the Program
+
 Due to some limitations on IDLE, the program cannot be run on it. Instead, use the Terminal:
 
 1.  At the location of the Python installation (usually at `/Applications/Python <version>/`), open and execute the "Install Certificates.command" file.
@@ -26,4 +30,5 @@ Due to some limitations on IDLE, the program cannot be run on it. Instead, use t
 4. Install required modules: `pip3 install -r requirements.txt`
 
 ## Contributing
+
 This project is not accepting feature contributions since it is meant for this specific coursework which has since concluded. If you would like to contribute in other ways except for adding features — such as reporting bugs, cleaning up code, and improving documentation — you may create a fork and a pull request once you're done, if you are interested.
