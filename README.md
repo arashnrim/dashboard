@@ -24,10 +24,25 @@ For more details on the project, visit the [project report](https://docs.google.
 
 Due to some limitations on IDLE, the program cannot be run on it. Instead, use the Terminal:
 
-1.  At the location of the Python installation (usually at `/Applications/Python <version>/`), open and execute the "Install Certificates.command" file.
-2. To use the feature on the radio, install the Chrome drivers at `/usr/local/bin/`.
-3. Navigate to the project directory: `cd /path/to/dashboard` (where `/path/to/dashboard` is replaced with the path to the folder)/
-4. Install required modules: `pip3 install -r requirements.txt`
+1. At the location of the Python installation (usually at `/Applications/Python <version>/`), open and execute the "Install Certificates.command" file.
+2. Navigate to the project directory: `cd /path/to/dashboard` (where `/path/to/dashboard` is replaced with the path to the folder)/
+3. Install required modules: `pip3 install -r requirements.txt`
+
+<details><summary>Additional steps to use the weather feature</summary>
+
+- Create an account at the [OpenWeatherMap website](https://home.openweathermap.org).
+- Generate an API key.
+- Copy the API key and paste it into `api_key` located in `weather/request.py`.
+
+> **Warning!**
+> An API key should be treated as something confidential; exposure of it can result in misuse by other unwanted developers and resulting in your account to potentially be terminated. Exercise caution when handling your API key, especially with a Git repository!
+</details>
+
+<details><summary>Additional steps to use the radio feature</summary>
+
+- Install [Google Chrome](https://chrome.google.com).
+- Install the [Chrome driver](https://chromedriver.chromium.org/) at `/usr/local/bin/`.
+</details>
 
 ## Contributing
 
