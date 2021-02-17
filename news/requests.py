@@ -1,12 +1,14 @@
 import os
 
 import feedparser
+
 from sources import sources
 from styles import Style
 
 news = []
 
 
+# noinspection PyShadowingNames
 def return_date(entry):
     """
     Returns the date of the given entry.

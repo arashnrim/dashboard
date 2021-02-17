@@ -1,5 +1,5 @@
-from styles import Style
 import weatherart
+from styles import Style
 
 
 def parse(data):

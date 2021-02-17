@@ -97,8 +97,13 @@ def parse_tasks():
                                                                                                   color=Style.RED if due else "",
                                                                                                   bold=Style.BOLD,
                                                                                                   name=task["name"],
-                                                                                                  importance="!" * int(task["importance"]),
-                                                                                                  spaces=" " * (1 + (3 - int(task["importance"]))),
+                                                                                                  importance="!" * int(
+                                                                                                      task[
+                                                                                                          "importance"]),
+                                                                                                  spaces=" " * (1 + (
+                                                                                                          3 - int(
+                                                                                                      task[
+                                                                                                          "importance"]))),
                                                                                                   due_date="- " + due_date
                                                                                                   ))
 
