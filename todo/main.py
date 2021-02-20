@@ -23,6 +23,8 @@ def show_details(task, index):
             break
         elif result == "b":
             break
+        else:
+            os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
 
 
 while True:
@@ -51,16 +53,19 @@ while True:
 
     request = input(request_message)
 
-    try:
-        request = int(request)
-    except ValueError:
-        if request == "a":
-            os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-            add_task()
-            os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-        if request == "q":
-            break
+    if request == "a":
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+        add_task()
+        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+    if request == "q":
+        break
     else:
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
-        show_details(tasks[request - 1], request - 1)
-        os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+        try:
+            request = int(request)
+        except ValueError:
+            pass
+        else:
+            os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
+            if 0 <= request <= len(tasks):
+                show_details(tasks[request - 1], request - 1)
+            os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
