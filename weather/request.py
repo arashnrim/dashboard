@@ -15,10 +15,7 @@ def retrieve_data(location):
     :param location: The location where the weather information is wished to be queried from.
     :return:
     """
-    # WARNING: This API key is public here only for the reason of making development easier. Since this is an
-    # educational project and not a commercial one, I think that it is acceptable not to safeguard the API key.
-    # If this were an actual commercial project for everyone to see, the API key should be guarded.
-    api_key = "a7f952efb5473d28dab30ba75920daa3"
+    api_key = ""
 
     try:
         # noinspection SpellCheckingInspection

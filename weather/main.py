@@ -11,8 +11,8 @@ while True:
 
     # Prompts the user for a location to find.
     location = input(
-        "{blue}?{end} {bold}Where would you like to know the weather about?{end} Alternatively, type q to exit: "
-            .format(blue=Style.BLUE, end=Style.END, bold=Style.BOLD))
+        "{blue}?{end} {bold}Where would you like to know the weather about?{end} Alternatively, type q to exit: ".format(
+            blue=Style.BLUE, end=Style.END, bold=Style.BOLD))
 
     # Attempts to retrieve the weather information for the user-specified location.
     if location == "q":

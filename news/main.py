@@ -2,7 +2,6 @@ import os
 import webbrowser
 
 from requests import news
-
 from styles import Style
 
 count = 0
