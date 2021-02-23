@@ -2,14 +2,14 @@
 
 ## Introduction
 
-Welcome to the Dashboard project! This project was created for the 2021 Sec 4 Computing+ Coursework. The main intention of the Coursework was to design a Python-executable script that works as a solution for the set design goal.
+Welcome to the Dashboard project! This project was created for a coursework. The main intention of the coursework was to design a Python-executable script that works as a solution for the set design goal.
 
 ### About the project
 
 The design goal of this project is:
 > Enabling easier use of a computer through an accessible, intuitive interface.
 
-With this dashboard-like interface, our main goal is to create an easy-to-use command-line interface for users who are not familiar with using computers. Having essential features in one place, this program should make it much easier to use a computer.
+With this dashboard-like interface, our main goal is to create an easy-to-use command-line interface for users who are not familiar with using computers. Having essential features in one place, this program should make it much easier to use some commonly-used features in a computer.
 
 For more details on the project, visit the [project report](https://docs.google.com/document/d/1t1rERklzGDVZPoyKrVBXq2GmOywC1a4bcmHmczDhVgk/edit#) (closed to contributors only).
 
@@ -24,9 +24,9 @@ For more details on the project, visit the [project report](https://docs.google.
 
 Due to some limitations on IDLE, the program cannot be run on it. Instead, use the Terminal:
 
-1. At the location of the Python installation (usually at `/Applications/Python <version>/`), open and execute the "Install Certificates.command" file.
-2. Navigate to the project directory: `cd /path/to/dashboard` (where `/path/to/dashboard` is replaced with the path to the folder)/
-3. Install required modules: `pip3 install -r requirements.txt`
+1. At the location of the Python installation (usually at `/Applications/Python <version>/`, where `<version>` is the Python version number), open and execute the "Install Certificates.command" file.
+2. Navigate to the project directory by running `cd /path/to/dashboard` (where `/path/to/dashboard` is replaced with the path to the folder).
+3. Install required modules by running `pip3 install -r requirements.txt`.
 
 <details><summary>Additional steps to use the weather feature</summary>
 
