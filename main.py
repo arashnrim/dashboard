@@ -17,12 +17,14 @@ if not (os.path.exists("{}/config.ini".format(os.path.dirname(os.path.abspath(__
     # noinspection PyUnresolvedReferences
     import configure
 
+# Retrieves the user's saved name from the configuration file.
 config = ConfigParser()
 config.read("config.ini")
 name = config.get("DEFAULT", "name")
 time = datetime.now().hour
 phrase = ""
 
+# Sets the greeting based on the current time.
 if time < 12:
     phrase = "morning"
 elif 12 <= time < 17:
@@ -41,6 +43,7 @@ showPrompt = True
 while True:
     os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
 
+    # Greets the user by their name if found; otherwise, a generic greeting is used.
     if name:
         print("Good {}, {}!".format(phrase, name))
     else:
@@ -54,11 +57,11 @@ while True:
                                                          activity=activity))
         print()
 
+    # Receives the user's input which is either a numeric value associated with a feature or q to quit.
+    # Once received, the feature is launched using the subprocess module.
     request = input(
         "Enter a number from 1 to {} or enter q to quit: ".format(len(activities)))
 
-    # Receives the user's input which is either a numeric value associated with a feature or q to quit.
-    # Once received, the feature is launched using the subprocess module.
     if request == "1":
         os.system('cls' if os.name == 'nt' else "printf '\033c\n'")
         subprocess.call(["python3", "main.py"], cwd="news")
